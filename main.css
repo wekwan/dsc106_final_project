@@ -5,10 +5,12 @@ body {
 }
 
 /* currently for layout */
+/*
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
+*/
 
 th {
     height: 275px;
@@ -24,7 +26,6 @@ th {
     margin-left: auto;
     margin-right: auto;
 }
-
 
 /* creating timeline on left side  */ 
 /* The actual timeline (the vertical ruler) */
