@@ -1,0 +1,128 @@
+
+body {
+  background-color: #e6e6e6;
+  font-family: Helvetica, sans-serif;
+}
+
+/* currently for layout */
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th {
+    height: 275px;
+}
+
+.right_cell {
+    width: 1000px;
+}
+
+/* set table to be 80% width of screen and have it centered */
+.layoutTable {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* creating timeline on left side  */ 
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: black;
+  top: 40px;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  border-radius: 10px;  
+  padding: 10px 10px;
+  position: relative;
+  /* background-color: blue; */
+  width: 40%;
+}
+
+.eagle {
+    background-color: #ff5900;
+}
+
+.dodger {
+    background-color: #005A9C;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -44px;
+  background-color: white;
+  border: 3px solid red;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 10px;
+}
+
+/* Place the container to the right */
+.right {
+  left: 55%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 0px;
+  border: medium solid orange;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 0px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -44px;
+}
+
+/* The actual content */
+.content {
+  padding: 15px 15px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
